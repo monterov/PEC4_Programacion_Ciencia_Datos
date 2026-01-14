@@ -23,31 +23,28 @@ tests/coverage, linting y capturas). La estructura de carpetas es la siguiente:
 
 Crear una función que acepte una ruta de archivo como argumento opcional. Si se proporciona la ruta, la función debe leer el fichero correspondiente. Si no se proporciona ninguna entrada, la función debe preguntar al usuario qué dataset de los dos disponibles desea cargar. Esta función se deberá reutilizar en los siguientes ejercicios.
 
-## Incidencias durante el desarrollo
-
-### Error de importación entre módulos
-
-Durante la ejecución inicial del archivo `main.py` se produjo un error de importación
-al intentar acceder a una función definida en un módulo auxiliar.
-
-Concretamente, al ejecutar el script desde la raíz del proyecto, apareció el
-siguiente error:
-
-- `ImportError: cannot import name 'carga_dataset' from 'modules.io_utils'`
-
-Este error se debía a un problema en la organización o definición de los módulos,
-que impedía que Python localizara correctamente la función indicada en el momento
-de la importación.
-
-La incidencia se muestra en la siguiente captura de pantalla, tomada desde el
-entorno de desarrollo (Visual Studio Code).
-
-![Error de importación en main.py](pantallazo_1.png)
-
-
 * Exploración del dataset. Para el dataset que el usuario seleccione, se debe:
 
     * 1.1. Mostrar las 5 primeras filas.
     * 1.2. Mostrar las columnas del dataframe.
     * 1.3. Mostrar la información (*info()*)
+
+### Errores
+
+#### Error de importación entre módulos
+
+Durante la ejecución inicial del archivo `main.py` se produjo un error de importación
+al intentar acceder a la función del primer ejercicio. Apareció en el terminal este error:
+
+![Error de importación en main.py](pantallazo_1.png)
+
+Tras revisar la organización de los módulos y las importaciones utilizadas en el
+archivo `main.py`, me percaté de que el error estaba en el nombre de la función, "carga_dataset". En el archivo `main.py`no lo había puesto correctamente, había puesto guión medio en vez del bajo, una vez corregido el fallo, se ejecuta correctamente:
+
+![Error solucionado en main.py](pantallazo_2.png)
+
+Ya tenemos el código con la función funcionando
+
+
+
 
