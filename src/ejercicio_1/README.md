@@ -45,6 +45,9 @@ archivo `main.py`, me percaté de que el error estaba en el nombre de la funció
 
 Ya tenemos el ejercicio 1 encaminado y la función operativa, sigamos.
 
+### Nota sobre validaciones de entrada
+
+He decidido mantener el código lo más limpio y enfocado posible en los objetivos principales: limpieza y análisis. Como los archivos Excel de entrada están garantizados dentro de la estructura del proyecto (data/), no he incluido comprobaciones de existencia de ficheros. 
 
 
 
