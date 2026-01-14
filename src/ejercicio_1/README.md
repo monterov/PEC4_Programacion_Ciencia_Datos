@@ -43,7 +43,7 @@ archivo `main.py`, me percaté de que el error estaba en el nombre de la funció
 
 ![Error solucionado en main.py](pantallazo_2.png)
 
-Ya tenemos el código con la función funcionando
+Ya tenemos el ejercicio 1 encaminado y la función operativa, sigamos.
 
 
 
