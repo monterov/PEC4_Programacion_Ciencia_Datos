@@ -53,7 +53,7 @@ En este archivo creo una función para renombrar las columnas:
 
 Para comprobar si funciona, en el archivo src\modules\main.py incluyo las instrucciones para cargar el ejercicio 2 y hago un print con las columnas del archivo abandono:
 
-![Renombrado de columnas del dataset de abandono](pantallazo_4_renombrado_columnas.png)
+![Renombrado de columnas del dataset de abandono](pantallazo_4.png)
 
 
 ## 2.2. Eliminar las columnas de "Universitat", "Unitat" en ambos dataframes, y también "Crèdits ordinaris superats" y "Crèdits ordinaris matriculats" en el caso del dataset de rendimiento.
