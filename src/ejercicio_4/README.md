@@ -34,9 +34,24 @@ def preparar_para_json(valor: Any) -> Any:
   **Ejecuto el ejercicio para ver si el apartado 4.1 está ok**
 
 ![ok_4.1](pantallazo_10.png)
-  
+
+### 4.2. Estadísticas Globales:
+Aquí calcularás las métricas que resumen el comportamiento general de todo el sistema universitario catalán, sin diferenciar por ramas:
+
+abandono_medio: La tasa media de abandono en primer curso, calculada como la media de la columna '% Abandonament a primer curs'.
+rendimiento_medio: La tasa media de rendimiento, calculada como la media de la columna 'Taxa rendiment'.
+correlacion_abandono_rendimiento: Este es un valor muy interesante que nos indica si existe relación entre el abandono y el rendimiento. Para calcularlo, debes usar la correlación de Pearson de scipy:
+from scipy.stats import pearsonr
+
+corr, p_value = pearsonr(
+    merged_df['% Abandonament a primer curs'].dropna(),
+    merged_df['Taxa rendiment'].dropna()
+)
+Una correlación negativa (como -0.68) nos indica que a mayor abandono, menor rendimiento, lo cual tiene sentido intuitivo.
 
 
+
+![ok_4.2](pantallazo_11.png)
 
 #### Referencias:
 
