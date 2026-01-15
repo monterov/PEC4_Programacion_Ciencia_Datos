@@ -98,7 +98,16 @@ Si slope > 0.01: la tendencia es "creciente" (el abandono aumenta con el tiempo)
 Si slope < -0.01: la tendencia es "decreciente" (el abandono disminuye)
 Si está entre -0.01 y 0.01: la tendencia es "estable" (sin cambios significativos)
 
+#### Error
 
+![error_4.3](pantallazo_12_ok.png)
+
+
+
+![solución_error_4.3](pantallazo_13_ok.png)
+
+
+![ok_4.3](pantallazo_14_ok.png)
 
 #### Referencias:
 
