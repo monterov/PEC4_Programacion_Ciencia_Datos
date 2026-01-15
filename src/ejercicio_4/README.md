@@ -51,7 +51,7 @@ Una correlación negativa (como -0.68) nos indica que a mayor abandono, menor re
 
 
 
-![ok_4.2](pantallazo_11.png)
+![ok_4.2](pantallazo_11_ok.png)
 
 #### Referencias:
 
