@@ -49,11 +49,60 @@ corr, p_value = pearsonr(
 )
 Una correlación negativa (como -0.68) nos indica que a mayor abandono, menor rendimiento, lo cual tiene sentido intuitivo.
 
+Para este apartado, añado a la función una limpieza de posibles valores nulos, para que las estadísticas no den errores o resultados incorrectos. Para ello uso la función dropna() de Pandas.
+Para calcular las medias generales uso float(), así me aseguro que el resultado sea compatible con JSON. 
+En cuanto a la correlación de Pearson, creo un DF temporal con ambas columnas y limpio las filas incompletas, porque tienen que estar en pareja para calcular la correlación.
+
+**Comentario resultado correlación de Pearson**
+
+Según el resultado de la correlación entre la tasa de rendimiento y el abandono ha sido -0.48, (por debajo del valor de 0.65). Siendo así, se confirma que, a medida que mejora el rendimiento de los estudiantes, el porcentaje de abandono en el primer curso tiende a disminuir. 
 
 
 ![ok_4.2](pantallazo_11_.png)
 
+## 4.3. Análisis por Rama:
+Esta es la sección más completa del análisis. Para cada rama de estudios (Arts i humanitats, Ciències, Ciències de la salut, etc.), debes calcular:
+
+**Estadísticas descriptivas básicas:**
+
+Media y desviación estándar del porcentaje de abandono
+Media y desviación estándar de la tasa de rendimiento
+Detección de tendencias temporales:
+
+Aquí es donde aplicarás la regresión lineal para detectar si el abandono en cada rama está mejorando (tendencia decreciente), empeorando (tendencia creciente), o se mantiene estable en el tiempo.
+
+**El proceso es el siguiente:**
+
+**a) Primero, agrupa los datos por año académico para cada rama:**
+
+branch_data = merged_df[merged_df['Branca'] == branch]
+branch_by_year = branch_data.groupby('Curs Acadèmic').agg({
+    '% Abandonament a primer curs': 'mean'
+}).reset_index()
+**b) Extrae las listas de años y valores:**
+
+years = branch_by_year['Curs Acadèmic'].tolist()
+valores_abandono = branch_by_year['% Abandonament a primer curs'].tolist()
+
+**c) Calcula la regresión lineal usando scipy:**
+
+from scipy.stats import linregress
+
+slope, intercept, r_value, p_value, std_err = linregress(
+    range(len(years)),  # Posiciones: 0, 1, 2, 3...
+    valores_abandono
+)
+**d) Interpreta la pendiente (slope):**
+
+Si slope > 0.01: la tendencia es "creciente" (el abandono aumenta con el tiempo)
+Si slope < -0.01: la tendencia es "decreciente" (el abandono disminuye)
+Si está entre -0.01 y 0.01: la tendencia es "estable" (sin cambios significativos)
+
+
+
 #### Referencias:
 
 https://docs.python.org/3/library/json.html
+https://www.datacamp.com/es/tutorial/pandas
+
 
