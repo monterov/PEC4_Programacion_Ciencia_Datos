@@ -40,23 +40,26 @@ Para solucionarlo, la idea es que el Ejercicio 3 cargue directamente el dataset 
 
 ### Para la creación de los gráficos
 
-Creo una función para los gráficos:
+Creo una función específica para generar los gráficos.
 
-Primero creo copia de seguridad de dataset con df.copy () para no modificar el DF original y normalizo la columna Curs Acadèmic para asegurar la consistencia del eje X.
-Para ordenar los cursos uso la función sort_key, así consigo que el gráfico siga un orden cronológico
-Ahora configuro el lienzo del gráfico, defino el color de cada Branca sin complicaciones, usando la paleta que se ha sugerido.En cuanto al tamaño, uso también el sugerido (14x10). 
-Para los subplots, creo una figura con dos filas y una columna, usando el parámetro sharex=True para que ambos gráficos puedan compartir el mismo eje X.
-Para la estética del gráfico, inserto una leyenda con los nombres de las brancas y roto 45 grados las etiquetas del eje X.
+Primero hago una copia del dataset con `df.copy()` para no modificar el DataFrame original.
+Después normalizo la columna `Curs Acadèmic` para asegurar la consistencia del eje X.
+Para ordenar los cursos utilizo una función `sort_key`, de modo que el gráfico siga un
+orden cronológico correcto.
+
+Configuro el lienzo del gráfico definiendo el color de cada *Branca* usando la paleta
+sugerida y el tamaño recomendado (14x10).
+Los gráficos se generan en una figura con dos subplots (dos filas y una columna),
+utilizando `sharex=True` para que ambos compartan el mismo eje X.
+
+Por último, añado la leyenda con los nombres de las *Branques* y roto 45 grados las
+etiquetas del eje X para mejorar la legibilidad.
 
 **Gráfico**
 ![gráficos](pantallazo_9.png)
 
-
-
-
-
-
-
 #### Referencias
-
+https://matplotlib.org/
 https://docs.python.org/es/dev/howto/sorting.html
+https://labex.io/es/tutorials/python-how-to-rotate-axis-labels-in-matplotlib-425461
+
