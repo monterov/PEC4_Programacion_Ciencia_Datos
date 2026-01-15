@@ -22,7 +22,7 @@ Rotar etiquetas del eje X si es necesario para mejor legibilidad
 
 ### Error
 
-pantallazo 6, error
+![error_gráficos](pantallazo_6.png)
 
 Durante las pruebas del Ejercicio 3, me encontré con un error al intentar exportar los gráficos de Matplotlib. El script fallaba porque la función no encontraba la ruta de guardado.
 
@@ -30,6 +30,9 @@ El problema: La variable IMG_DIR (que apunta a src/img/) no estaba disponible en
 
 Como solución, centralicé todas las rutas del proyecto al inicio de main.py. Utilicé la librería pathlib para que las rutas sean dinámicas y funcionen en cualquier sistema operativo:
 
-pantallazo 7, solución
+![Solución_1](pantallazo_7.png)
 
 También me he dado cuenta al ejecutar el ejercicio 3 que también se ejecuta el ejercicio 2. Tienen que poderse ejecutar independientemente, así que...
+
+
+![ok_gráficos](pantallazo_8.png)
