@@ -31,11 +31,9 @@ def preparar_para_json(valor: Any) -> Any:
         return None
     return valor
 
-  **Error**
+  **Ejecuto el ejercicio para ver si el apartado 4.1 está ok**
 
-  Al ejecutar el ejercicio 4, para ver si el apartado 4.1 está correcto, me aparece este error en el terminal:
-
-![error_4.1](pantallazo_10.png)
+![ok_4.1](pantallazo_10.png)
   
 
 
