@@ -35,7 +35,8 @@ def preparar_para_json(valor: Any) -> Any:
 
   Al ejecutar el ejercicio 4, para ver si el apartado 4.1 está correcto, me aparece este error en el terminal:
 
-  pantallazo 10
+![error_4.1](pantallazo_10.png)
+  
 
 
 
