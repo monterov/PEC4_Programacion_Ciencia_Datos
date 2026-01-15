@@ -26,9 +26,7 @@ Rotar etiquetas del eje X si es necesario para mejor legibilidad
 
 Durante las pruebas del Ejercicio 3, me encontré con un error al intentar exportar los gráficos de Matplotlib. El script fallaba porque la función no encontraba la ruta de guardado.
 
-El problema: La variable IMG_DIR (que apunta a src/img/) no estaba disponible en el ámbito global del programa cuando la función intentaba llamarla. En Python, si una función no encuentra una variable local ni una global previamente declarada, lanza un NameError.
-
-Como solución, centralicé todas las rutas del proyecto al inicio de main.py. 
+Al final era una tontería: estaba llamando a IMG_DIR sin haberla definido. Lo arreglé declarando todas las rutas arriba del main.py para que no vuelva a pasar.
 
 ![Solución_1](pantallazo_7.png)
 
@@ -36,4 +34,29 @@ Ejecuto de nuevo ejercicio 3 en la terminal:
 
 ![ok_gráficos](pantallazo_8.png)
 
-También me he dado cuenta al ejecutar el ejercicio 3 que también se ejecuta el ejercicio 2. Tienen que poderse ejecutar independientemente, así que...
+Al ejecutar, observé que también se ejecutaba el Ejercicio 2, lo cual no es lo ideal si queremos que cada ejercicio sea autónomo.
+
+Para solucionarlo, la idea es que el Ejercicio 3 cargue directamente el dataset ya fusionado del Ejercicio 2 (por ejemplo desde src/out/merged_ej2.csv) y no vuelva a recalcular todo el pipeline.
+
+### Para la creación de los gráficos
+
+Creo una función para los gráficos:
+
+Primero creo copia de seguridad de dataset con df.copy () para no modificar el DF original y normalizo la columna Curs Acadèmic para asegurar la consistencia del eje X.
+Para ordenar los cursos uso la función sort_key, así consigo que el gráfico siga un orden cronológico
+Ahora configuro el lienzo del gráfico, defino el color de cada Branca sin complicaciones, usando la paleta que se ha sugerido.En cuanto al tamaño, uso también el sugerido (14x10). 
+Para los subplots, creo una figura con dos filas y una columna, usando el parámetro sharex=True para que ambos gráficos puedan compartir el mismo eje X.
+Para la estética del gráfico, inserto una leyenda con los nombres de las brancas y roto 45 grados las etiquetas del eje X.
+
+**Gráfico**
+![gráficos](pantallazo_9.png)
+
+
+
+
+
+
+
+#### Referencias
+
+https://docs.python.org/es/dev/howto/sorting.html
