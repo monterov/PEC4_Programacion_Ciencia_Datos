@@ -58,22 +58,34 @@ Para comprobar si funciona, en el archivo src\modules\main.py incluyo las instru
 
 ## 2.2. Eliminar las columnas de "Universitat", "Unitat" en ambos dataframes, y también "Crèdits ordinaris superats" y "Crèdits ordinaris matriculats" en el caso del dataset de rendimiento.
 
-Al crear la función para eliminar las columnas me he dado cuenta que la ejecución secuencial de ejercicios obligaba a introducir inputs innecesarios. En el enunciado del ejercicio se hace mención a esto: *“main.py debe ejecutar todas las funciones pero también permitir ejecutarlas una a una”*. 
-Tal y como lo estaba enfocando, iba mal, se tenía que introducir en el ejercicio 1 imput de número de fichero. Para evitar esto, he cambiado el flujo para que -ex 2 ejecute solo el ejercicio 2 en el archivo main.
-Ahora, al ejecutar el ejercicio 2, lo hace sin pasar por el ejercicio 1 y tener que introducir el imput.
+Mientras desarrollaba el Ejercicio 2, me di cuenta de que el flujo de ejecución era un poco pesado. Cada vez que quería probar la limpieza de columnas, el programa me obligaba a pasar por el Ejercicio 1 y seleccionar manualmente el archivo de entrada.
+
+El enunciado pide que main.py permita ejecutar ejercicios por separado, y mi implementación inicial no era lo suficientemente flexible. Por eso, ajusté la lógica del parámetro -ex.
+
+¿El resultado? Ahora, si ejecuto -ex 2, el script va directo al grano, ignorando los pasos del primer ejercicio. Esto hace que el desarrollo y la corrección sea mucho más ágil. Abajo se puede ver cómo el Ejercicio 2 funciona ahora de forma aislada.
 
 ![main corregido](pantallazo_5.png)
 
 
-
-
 ## 2.3. Crear y aplicar a los datasets una función que agrupe todas las filas que compartan las mismas características (excepto el nombre del estudio) para ambos datasets. La función debe devolver un nuevo dataset con:
-    * Una fila por cada combinación únicas de las columnas ['Curs Acadèmic', 'Tipus universitat', 'Sigles', 'Tipus Estudi', 'Branca', 'Sexe', 'Integrat S/N']
-    * Una columna con el rendimiento medio, en el caso del dataset de rendimiento y con la tasa media de abandono en el caso del dataset de abandono.
+    Una fila por cada combinación únicas de las columnas ['Curs Acadèmic', 'Tipus universitat', 'Sigles', 'Tipus Estudi', 'Branca', 'Sexe', 'Integrat S/N']
+    Una columna con el rendimiento medio, en el caso del dataset de rendimiento y con la tasa media de abandono en el caso del dataset de abandono.
 
-    
+Para agrupar los datasets podéis utilizar el método _groupby_ de pandas, y para fusionar ambos datasets, el método _merge_ con la propiedad _inner_. 
+
+Para que el análisis fuera manejable antes de fusionar los datasets, decidí crear una función de pre-agrupación. Usé groupby para obtener la media de las tasas de rendimiento y abandono.
+Elegí la media porque, al trabajar con porcentajes, es la forma más justa de comparar grupos; así evito que un grupo con muchos más registros que otro acabe "pesando" más de la cuenta en la tendencia final.
+Durante el desarrollo, estuve revisando cómo optimizar este paso consultando tanto la documentación de Pandas como la de PySpark (para entender mejor las lógicas de agregación de datos a mayor escala):
+
+Documentación de Pandas:- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html
+Documentación de Apache Sparck:
+https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.groupBy.html
+
 ## 2.4. Crear una función para fusionar ambos datasets. El dataset resultante solo debe contener las filas coincidentes entre ambos datasets. A partir de ahora utilizaréis este datasets en los ejercicios futuros. 
 
-*Nota*: Para agrupar los datasets podéis utilizar el método _groupby_ de pandas, y para fusionar ambos datasets, el método _merge_ con la propiedad _inner_. 
+Para poder analizar todas las variables en conjunto, he creado una función que integra ambos datasets en uno solo. He optado por un inner join mediante el método merge de Pandas; de esta forma, me aseguro de que el DataFrame resultante solo contenga filas con información completa en ambos lados, evitando registros vacíos que ensuciarían los ejercicios siguientes.
 
+Para ajustar correctamente los parámetros de la unión (especialmente las claves de cruce), me apoyé en estos recursos:
 
+Documentación de Pandas:- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html
+Guía de 4Geeks - https://4geeks.com/es/how-to/pandas-merge
