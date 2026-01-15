@@ -28,11 +28,12 @@ Durante las pruebas del Ejercicio 3, me encontré con un error al intentar expor
 
 El problema: La variable IMG_DIR (que apunta a src/img/) no estaba disponible en el ámbito global del programa cuando la función intentaba llamarla. En Python, si una función no encuentra una variable local ni una global previamente declarada, lanza un NameError.
 
-Como solución, centralicé todas las rutas del proyecto al inicio de main.py. Utilicé la librería pathlib para que las rutas sean dinámicas y funcionen en cualquier sistema operativo:
+Como solución, centralicé todas las rutas del proyecto al inicio de main.py. 
 
 ![Solución_1](pantallazo_7.png)
 
-También me he dado cuenta al ejecutar el ejercicio 3 que también se ejecuta el ejercicio 2. Tienen que poderse ejecutar independientemente, así que...
-
+Ejecuto de nuevo ejercicio 3 en la terminal:
 
 ![ok_gráficos](pantallazo_8.png)
+
+También me he dado cuenta al ejecutar el ejercicio 3 que también se ejecuta el ejercicio 2. Tienen que poderse ejecutar independientemente, así que...
