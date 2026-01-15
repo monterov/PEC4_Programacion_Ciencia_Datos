@@ -73,19 +73,17 @@ El enunciado pide que main.py permita ejecutar ejercicios por separado, y mi imp
 
 Para agrupar los datasets podéis utilizar el método _groupby_ de pandas, y para fusionar ambos datasets, el método _merge_ con la propiedad _inner_. 
 
-Para que el análisis fuera manejable antes de fusionar los datasets, decidí crear una función de pre-agrupación. Usé groupby para obtener la media de las tasas de rendimiento y abandono.
-Elegí la media porque, al trabajar con porcentajes, es la forma más justa de comparar grupos; así evito que un grupo con muchos más registros que otro acabe "pesando" más de la cuenta en la tendencia final.
-Durante el desarrollo, estuve revisando cómo optimizar este paso consultando tanto la documentación de Pandas como la de PySpark (para entender mejor las lógicas de agregación de datos a mayor escala):
+Para poder fusionar ambos datasets, se realizó una agregación previa utilizando el método groupby de pandas, obteniendo una única fila por grupo.
+En el dataset de rendimiento se calculó la media de la variable Taxa rendiment, y en el dataset de abandono la media de % Abandonament a primer curs, al tratarse en ambos casos de tasas.
 
+#### Referencias consultadas:
 Documentación de Pandas:- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html
-Documentación de Apache Sparck:
-https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.groupBy.html
 
 ## 2.4. Crear una función para fusionar ambos datasets. El dataset resultante solo debe contener las filas coincidentes entre ambos datasets. A partir de ahora utilizaréis este datasets en los ejercicios futuros. 
 
-Para poder analizar todas las variables en conjunto, he creado una función que integra ambos datasets en uno solo. He optado por un inner join mediante el método merge de Pandas; de esta forma, me aseguro de que el DataFrame resultante solo contenga filas con información completa en ambos lados, evitando registros vacíos que ensuciarían los ejercicios siguientes.
+Para poder analizar todas las variables en conjunto, he creado una función que integra ambos datasets en uno solo. He optado por un inner join mediante el método merge de Pandas; de esta forma, me aseguro de que el DataFrame resultante solo contenga filas con información completa en ambos lados.
 
-Para ajustar correctamente los parámetros de la unión (especialmente las claves de cruce), me apoyé en estos recursos:
+#### Referencias consultadas:
 
 Documentación de Pandas:- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html
 Guía de 4Geeks - https://4geeks.com/es/how-to/pandas-merge
