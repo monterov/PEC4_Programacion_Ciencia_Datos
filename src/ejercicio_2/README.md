@@ -51,12 +51,18 @@ En este archivo creo una función para renombrar las columnas:
 - Universitat Responsable por Universitat
 - Sexe Alumne por Sexe
 
-Para comprobar si funciona, en el archivo src\modules\main.py incluyo las instrucciones para cargar el ejercicio 2 y hago un print con las columnas del archivo abandono:
+Para comprobar si funciona, en el archivo src\modules\main.py incluyo las instrucciones para cargar el ejercicio 2 y hago un print con las columnas del archivo abandono. Uso el terminal de VS y ejecuto:
 
 ![Renombrado de columnas del dataset de abandono](pantallazo_4.png)
 
 
 ## 2.2. Eliminar las columnas de "Universitat", "Unitat" en ambos dataframes, y también "Crèdits ordinaris superats" y "Crèdits ordinaris matriculats" en el caso del dataset de rendimiento.
+
+Al crear la función para eliminar las columnas me he dado cuenta que la ejecución secuencial de ejercicios obligaba a introducir inputs innecesarios. En el enunciado del ejercicio se hace mención a esto: *“main.py debe ejecutar todas las funciones pero también permitir ejecutarlas una a una”*. 
+Tal y como lo estaba enfocando, iba mal, se tenía que introducir en el ejercicio 1 imput de número de fichero. Para evitar esto, he cambiado el flujo para que -ex 2 ejecute solo el ejercicio 2 en el archivo main.
+Ahora, al ejecutar el ejercicio 2, lo hace sin pasar por el ejercicio 1 y tener que introducir el imput.
+
+![main corregido](pantallazo_5.png)
 
 
 
