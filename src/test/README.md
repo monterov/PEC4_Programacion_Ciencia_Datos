@@ -13,7 +13,8 @@ y de la cobertura:
 
 #### Referencias externas
 
-Video tutorial muy interesante uso test: https://www.youtube.com/watch?v=JZ0TMkwMgp8
-Blog de Álvaro Monsalve: https://alvaromonsalve.com/2019/01/26/test-unitarios-y-cobertura-de-codigo-en-python/
+- Video tutorial muy interesante uso test: https://www.youtube.com/watch?v=JZ0TMkwMgp8
+
+- Blog de Álvaro Monsalve: https://alvaromonsalve.com/2019/01/26/test-unitarios-y-cobertura-de-codigo-en-python/
 
 
