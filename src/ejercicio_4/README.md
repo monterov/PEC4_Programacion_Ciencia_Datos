@@ -98,6 +98,14 @@ Si slope > 0.01: la tendencia es "creciente" (el abandono aumenta con el tiempo)
 Si slope < -0.01: la tendencia es "decreciente" (el abandono disminuye)
 Si está entre -0.01 y 0.01: la tendencia es "estable" (sin cambios significativos)
 
+Para este apartado del ejercicio, he bajado al detalle por cada rama (Branca) usando el archivo que fusioné en el Ejercicio 2. Lo que he hecho es:
+
+Sacar los números típicos: El promedio, el máximo, el mínimo y cuánto varían el abandono y el rendimiento en cada rama.
+
+Ver hacia dónde va la tendencia según venía explícitamente en el enunciado: Para saber si el abandono sube o baja con el tiempo, he aplicado una regresión lineal usando scipy, como se pedía.
+
+Todo esto queda bien organizado en el JSON final dentro de analisis_por_rama. Despúés de varios intentos creo que he conseguido que quede como el JSON del ejemplo, no sin errores, que he tenido varios:
+
 #### Error
 
 ![error_4.3](pantallazo_12_ok.png)
@@ -105,10 +113,6 @@ Si está entre -0.01 y 0.01: la tendencia es "estable" (sin cambios significativ
 
 
 ![solución_error_4.3](pantallazo_13_ok.png)
-
-
-![ok_4.3](pantallazo_14_ok.png)
-
 
 #### Error
 
