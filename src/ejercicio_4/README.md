@@ -109,6 +109,13 @@ Si está entre -0.01 y 0.01: la tendencia es "estable" (sin cambios significativ
 
 ![ok_4.3](pantallazo_14_ok.png)
 
+
+#### Error
+
+Tras los cambios para ....me aparece este error en la línea 97
+
+![error_línea_97](pantallazo_15_ok.png)
+
 #### Referencias:
 
 https://docs.python.org/3/library/json.html
