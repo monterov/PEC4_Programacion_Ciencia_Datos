@@ -128,13 +128,16 @@ Rama con mayor abandono (porcentaje más alto)
 Rama con menor abandono (porcentaje más bajo)
 Puedes calcular los rankings ordenando las ramas según cada métrica y tomando el primer/último elemento.
 
+Para hacer este apartado, agrupo por Branca, calculo medias y luego saco los extremos (máximos y mínimos).
 
-
-
+**Resultado:**
+![ok_Json_4.4](pantallazo_17_ok.png)
 
 #### Referencias:
+Documentación y recursos consultados durante el desarrollo:
 
 https://docs.python.org/3/library/json.html
 https://www.datacamp.com/es/tutorial/pandas
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html
 
 
