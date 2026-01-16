@@ -6,9 +6,10 @@ El código debe contener una o varias suites de test que permitan comprobar que 
 Ejecuté pytest, vi que pasaban los tests y luego saqué coverage para comprobar el %. 
 
 Capturas del resultado de pytest 
-![test_ok](pantallazo_17_ok.png)
-y del coverage: 
-![coverage_ok](pantallazo_18_ok.png)
+![test_ok](pantallazo_test.png)
+
+y de la cobertura: 
+![coverage_ok](pantallazo_coverage.png)
 
 #### Referencias externas
 
