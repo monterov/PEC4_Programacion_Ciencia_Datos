@@ -110,21 +110,28 @@ Todo esto queda bien organizado en el JSON final dentro de analisis_por_rama. De
 
 ![error_4.3](pantallazo_12_ok.png)
 
-
+El problema era que se estaba usando la variable col_branca sin haber sido definida previamente dentro de la función (o en el mismo bloque de código donde se utilizaba). Solución: incluyo la variable.
 
 ![solución_error_4.3](pantallazo_13_ok.png)
 
-#### Error
-
-Tras los cambios para ....me aparece este error en la línea 97
-
-![error_línea_97](pantallazo_15_ok.png)
-
-Soluciono el error...
-
-
+Ejecuto para ver la salida del JSON y parece que está correcto:
 
 ![ok_Json](pantallazo_16_ok.png)
+
+# 4.4. Rankings:
+
+Para terminar el análisis, identifica qué ramas tienen los mejores y peores resultados. Esto es útil para tomar decisiones sobre dónde enfocar recursos o investigar qué están haciendo bien las ramas con mejores resultados:
+
+Rama con mejor rendimiento (tasa más alta)
+Rama con peor rendimiento (tasa más baja)
+Rama con mayor abandono (porcentaje más alto)
+Rama con menor abandono (porcentaje más bajo)
+Puedes calcular los rankings ordenando las ramas según cada métrica y tomando el primer/último elemento.
+
+
+
+
+
 #### Referencias:
 
 https://docs.python.org/3/library/json.html
