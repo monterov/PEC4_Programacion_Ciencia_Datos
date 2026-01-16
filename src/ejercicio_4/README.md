@@ -116,6 +116,11 @@ Tras los cambios para ....me aparece este error en la línea 97
 
 ![error_línea_97](pantallazo_15_ok.png)
 
+Soluciono el error...
+
+
+
+![ok_Json](pantallazo_17_ok.png)
 #### Referencias:
 
 https://docs.python.org/3/library/json.html
