@@ -120,7 +120,7 @@ Soluciono el error...
 
 
 
-![ok_Json](pantallazo_17_ok.png)
+![ok_Json](pantallazo_16_ok.png)
 #### Referencias:
 
 https://docs.python.org/3/library/json.html
